@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulungushi University Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <!-- Placeholder for Mulungushi Logo -->
+            <img src="MU LOGO.png" alt="A ka logo with removed background" width="200">
+
+            <h2>Mulungushi University Course Registration</h2>
+        </div>
+        <nav id="main-nav" class="hidden">
+            <button id="nav-add-course" class="active">Add new course</button>
+            <button id="nav-manage-course">Manage course</button>
+            <button id="logout-btn" class="logout">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="login-section">
+            <form id="login-form">
+                <label for="login-name">Name</label>
+                <input type="text" id="login-name" placeholder="Name" required>
+
+                <label for="login-phone">Phone number</label>
+                <input type="tel" id="login-phone" placeholder="Phone number" required>
+
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Password" required>
+
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+        </section>
+
+        <!-- REGISTRATION SECTION -->
+        <section id="registration-section" class="hidden">
+            <div id="feedback-message" class="hidden" aria-live="polite"></div>
+
+            <form id="registration-form">
+                <!-- Merging Lab specs (Name, ID, Programme, Course) with Figma UI -->
+                <label for="student-name">Student Name:</label>
+                <input type="text" id="student-name" placeholder="Your full name" required>
+
+                <label for="student-id">Student ID:</label>
+                <input type="text" id="student-id" placeholder="e.g. 20230123" required>
+
+                <label for="programme">Programme:</label>
+                <input type="text" id="programme" placeholder="e.g. Computer Science" required>
+
+                <label for="course-code">Course:</label>
+                <input type="text" id="course-code" placeholder="e.g. ICT461" required>
+
+                <button type="submit" id="submit-registration" class="btn-primary">Add Course</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mulungushi University - Group L Work</p>
+    </footer>
+
+    <!-- Module script required by Lab Task 1.3 -->
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
