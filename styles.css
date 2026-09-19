@@ -156,16 +156,17 @@ footer {
     .logout {
         margin-left: auto;
         background: #f08080 !important;
-        color: white !important;
+        color: rgb(0, 0, 0) !important;
         border-radius: 4px;
     }
 }
+
 /* Professional Polish for Registration Form */
 .polished-form {
     max-width: 700px;
     padding: 40px;
     border: none;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .form-header {
@@ -245,7 +246,7 @@ footer {
 }
 
 /* Style the card when the hidden checkbox is checked */
-.course-card input[type="checkbox"]:checked + .course-details {
+.course-card input[type="checkbox"]:checked+.course-details {
     color: #0b5c2d;
 }
 
@@ -276,9 +277,11 @@ footer {
     .input-grid {
         grid-template-columns: 1fr 1fr;
     }
+
     .full-width {
         grid-column: span 2;
     }
+
     .course-grid {
         grid-template-columns: 1fr 1fr;
     }
