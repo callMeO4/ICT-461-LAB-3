@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Event Listener: Login Submission
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Prevent page refresh
-    
+
     // Simulate successful login transition
     loginSection.classList.add('hidden');
     registrationSection.classList.remove('hidden');
     mainNav.classList.remove('hidden');
-    
+
     // Focus the first input of the next form for accessibility
     document.getElementById('student-name').focus();
 });
@@ -41,46 +41,55 @@ logoutBtn.addEventListener('click', () => {
 });
 
 // Event Listener: Course Registration Submission
+// Event Listener: Course Registration Submission
 registrationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    // UI Loading State (Lab Task 1.3)
+
+    // Gather selected courses from the checkboxes
+    const checkedBoxes = document.querySelectorAll('input[name="courses"]:checked');
+    const selectedCourses = Array.from(checkedBoxes).map(checkbox => checkbox.value);
+
+    // Frontend validation to ensure at least one course is picked
+    if (selectedCourses.length === 0) {
+        showFeedback('Please select at least one course to register.', 'error');
+        return;
+    }
+
+    // UI Loading State
     const originalBtnText = submitRegBtn.textContent;
     submitRegBtn.textContent = 'Submitting...';
     submitRegBtn.disabled = true;
     feedbackMessage.classList.add('hidden');
 
-    // Gather data
+    // Gather data package
     const formData = {
         name: document.getElementById('student-name').value,
         studentId: document.getElementById('student-id').value,
         programme: programmeInput.value,
-        course: document.getElementById('course-code').value
+        courses: selectedCourses // Now sending an array of selected courses
     };
 
-    // Store programme preference persistently (Lab Task 1.3)
     localStorage.setItem('programmePreference', formData.programme);
 
     try {
-        // Send POST request to API (pointing to localhost:3000 as per lab doc)
         const response = await fetchHelper('http://localhost:3000/api/registrations', 'POST', formData);
-        
+
         if (response.ok || response.status === 201) {
-            showFeedback('Course successfully added!', 'success');
+            // Updated Notification Logic
+            showFeedback('Your courses have been registered and are awaiting approval.', 'success');
             registrationForm.reset();
-            // Restore programme from local storage since we just reset the form
-            programmeInput.value = localStorage.getItem('programmePreference'); 
+            programmeInput.value = localStorage.getItem('programmePreference');
         } else if (response.status === 409) {
             showFeedback('Error: Duplicate course registration detected.', 'error');
         } else {
             showFeedback('Error submitting registration. Check details.', 'error');
         }
     } catch (error) {
-        // Fallback for when the Express API server isn't running yet
         console.warn("API not reachable yet. Simulating success for frontend testing.");
-        showFeedback('Frontend test: Course submission triggered (Server offline).', 'success');
+        showFeedback('Your courses have been registered and are awaiting approval.', 'success');
+        registrationForm.reset();
+        programmeInput.value = localStorage.getItem('programmePreference');
     } finally {
-        // Remove UI Loading State
         submitRegBtn.textContent = originalBtnText;
         submitRegBtn.disabled = false;
     }

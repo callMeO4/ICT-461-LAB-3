@@ -14,11 +14,16 @@
             <!-- Placeholder for Mulungushi Logo -->
             <img src="MU LOGO.png" alt="A ka logo with removed background" width="200">
 
-            <h2>Mulungushi University Course Registration</h2>
+            <h2>Mulungushi University</h2>
+            <h2> Course Registration</h2>
         </div>
-        <nav id="main-nav" class="hidden">
-            <button id="nav-add-course" class="active">Add new course</button>
+        <!--
+        
+         <button id="nav-add-course" class="active">Add new course</button>
             <button id="nav-manage-course">Manage course</button>
+       -->
+        <nav id="main-nav" class="hidden">
+
             <button id="logout-btn" class="logout">Logout</button>
         </nav>
     </header>
@@ -30,9 +35,9 @@
                 <label for="login-name">Name</label>
                 <input type="text" id="login-name" placeholder="Name" required>
 
-                <label for="login-phone">Phone number</label>
+                <!--<label for="login-phone">Phone number</label>
                 <input type="tel" id="login-phone" placeholder="Phone number" required>
-
+-->
                 <label for="login-password">Password</label>
                 <input type="password" id="login-password" placeholder="Password" required>
 
@@ -44,21 +49,78 @@
         <section id="registration-section" class="hidden">
             <div id="feedback-message" class="hidden" aria-live="polite"></div>
 
-            <form id="registration-form">
-                <!-- Merging Lab specs (Name, ID, Programme, Course) with Figma UI -->
-                <label for="student-name">Student Name:</label>
-                <input type="text" id="student-name" placeholder="Your full name" required>
+            <form id="registration-form" class="polished-form">
+                <div class="form-header">
+                    <h3>Select Your Courses</h3>
+                    <p>Choose the modules you wish to register for this semester.</p>
+                </div>
 
-                <label for="student-id">Student ID:</label>
-                <input type="text" id="student-id" placeholder="e.g. 20230123" required>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="student-name">Student Name:</label>
+                        <input type="text" id="student-name" placeholder="Your full name" required>
+                    </div>
 
-                <label for="programme">Programme:</label>
-                <input type="text" id="programme" placeholder="e.g. Computer Science" required>
+                    <div class="input-group">
+                        <label for="student-id">Student ID:</label>
+                        <input type="text" id="student-id" placeholder="e.g. 20230123" required>
+                    </div>
 
-                <label for="course-code">Course:</label>
-                <input type="text" id="course-code" placeholder="e.g. ICT461" required>
+                    <div class="input-group full-width">
+                        <label for="programme">Programme:</label>
+                        <input type="text" id="programme" placeholder="e.g. Computer Science" required>
+                    </div>
+                </div>
 
-                <button type="submit" id="submit-registration" class="btn-primary">Add Course</button>
+                <fieldset class="course-selection">
+                    <legend>Available Courses</legend>
+                    <div class="course-grid">
+                        <label class="course-card">
+                            <input type="checkbox" name="courses" value="ICT-461">
+                            <span class="course-details">
+                                <span class="course-code">ICT-461</span>
+                                <span class="course-name">Web Systems and Technology</span>
+                            </span>
+                        </label>
+                        <label class="course-card">
+                            <input type="checkbox" name="courses" value="ICT-411">
+                            <span class="course-details">
+                                <span class="course-code">ICT-411</span>
+                                <span class="course-name">Network Security</span>
+                            </span>
+                        </label>
+                        <label class="course-card">
+                            <input type="checkbox" name="courses" value="ICT-411">
+                            <span class="course-details">
+                                <span class="course-code">ICT-431</span>
+                                <span class="course-name">Captsone Project</span>
+                            </span>
+                        </label>
+                        <label class="course-card">
+                            <input type="checkbox" name="courses" value="ICS-441">
+                            <span class="course-details">
+                                <span class="course-code">ICS-441</span>
+                                <span class="course-name">Cloud Computing And Destributed Systems</span>
+                            </span>
+                        </label>
+                        <label class="course-card">
+                            <input type="checkbox" name="courses" value="ICT-411">
+                            <span class="course-details">
+                                <span class="course-code">ICT-372</span>
+                                <span class="course-name">Advenced Databases</span>
+                            </span>
+                        </label>
+                        <label class="course-card">
+                            <input type="checkbox" name="courses" value="ICT-481">
+                            <span class="course-details">
+                                <span class="course-code">ICT-481</span>
+                                <span class="course-name">Project Managment</span>
+                            </span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button type="submit" id="submit-registration" class="btn-primary">Submit Registration</button>
             </form>
         </section>
     </main>

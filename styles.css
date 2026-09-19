@@ -160,3 +160,126 @@ footer {
         border-radius: 4px;
     }
 }
+/* Professional Polish for Registration Form */
+.polished-form {
+    max-width: 700px;
+    padding: 40px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-header h3 {
+    color: var(--primary-green);
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+    color: #444;
+}
+
+/* Course Selection Cards */
+.course-selection {
+    border: none;
+    margin-bottom: 25px;
+    padding: 0;
+}
+
+.course-selection legend {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.course-card {
+    position: relative;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: block;
+}
+
+.course-card:hover {
+    border-color: var(--primary-green);
+    background-color: #f0fdf4;
+}
+
+/* Hide the default checkbox */
+.course-card input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Style the card when the hidden checkbox is checked */
+.course-card input[type="checkbox"]:checked + .course-details {
+    color: #0b5c2d;
+}
+
+.course-card:has(input[type="checkbox"]:checked) {
+    border-color: var(--primary-green);
+    background-color: #e6f9ec;
+    box-shadow: 0 4px 10px rgba(131, 232, 154, 0.2);
+}
+
+.course-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-code {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.course-name {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Desktop Polish */
+@media (min-width: 768px) {
+    .input-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .full-width {
+        grid-column: span 2;
+    }
+    .course-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
