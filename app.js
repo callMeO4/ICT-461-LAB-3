@@ -40,7 +40,7 @@ logoutBtn.addEventListener('click', () => {
     loginForm.reset();
 });
 
-// Event Listener: Course Registration Submission
+
 // Event Listener: Course Registration Submission
 registrationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -98,5 +98,5 @@ registrationForm.addEventListener('submit', async (e) => {
 // Helper function to update DOM safely (Lab Task 1.3)
 function showFeedback(message, type) {
     feedbackMessage.textContent = message;
-    feedbackMessage.className = type; // removes 'hidden' and adds 'success' or 'error'
+    feedbackMessage.className = type; 
 }
