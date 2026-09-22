@@ -105,12 +105,12 @@ I primarily focused on the backend API development using Express and implemented
 
 ### Michelo  Harry Moonga -  202110843
 [Insert 100-word reflection here: Contribution, one mistake, and how it was verified/fixed.]
-
+y
 ### Siabonga Phiri - 202302370
 [Insert 100-word reflection here: Contribution, one mistake, and how it was verified/fixed.]
 
 ### Shammah Musukwa - 202305900
-[Insert 100-word reflection here: Contribution, one mistake, and how it was verified/fixed.]
+I helped with the project by working with my group members and helping to check if the course registration system was working correctly. I also helped with testing some of the API requests and checking the results. One mistake I made was using the wrong information when testing one of the requests, which caused it not to work as expected. I checked the request again and compared it with the API requirements. After correcting the information, I tested it again and it worked. This project helped me understand more about HTTP requests, API testing. 
 
 ### Chilando Gift - 202304589
 [Insert 100-word reflection here: Contribution, one mistake, and how it was verified/fixed.]
