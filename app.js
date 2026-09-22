@@ -98,5 +98,6 @@ registrationForm.addEventListener('submit', async (e) => {
 // Helper function to update DOM safely (Lab Task 1.3)
 function showFeedback(message, type) {
     feedbackMessage.textContent = message;
-    feedbackMessage.className = type; 
+    feedbackMessage.className = type;
 }
+// Final frontend review
